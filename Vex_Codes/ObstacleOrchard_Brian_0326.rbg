@@ -1,0 +1,476 @@
+<Version>1.0.1</Version>
+
+<ProgrammingBlock type="comment">Obstacle Orchard Challenge 2016.03.26 Brian</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Using Clawbot IQ : Obstacle Det.</ProgrammingBlock>
+
+<ProgrammingBlock type="comment" commented="1">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getMotorEncoder(leftMotor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;=</Parameter>
+        <Parameter name="RHS" type="float">2351</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="float">170</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetMotorEncoder">
+    <Parameters>
+        <Parameter name="nMotorIndex" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getMotorEncoder(leftMotor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;=</Parameter>
+        <Parameter name="RHS" type="float">1400</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="float">170</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Raise Claw</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">650</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Claw Down</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">-100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetMotorEncoder">
+    <Parameters>
+        <Parameter name="nMotorIndex" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getMotorEncoder(leftMotor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;=</Parameter>
+        <Parameter name="RHS" type="float">+1815</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="float">170</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="comment">Raise Claw</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Claw Down</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">-100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetMotorEncoder">
+    <Parameters>
+        <Parameter name="nMotorIndex" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getMotorEncoder(leftMotor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;=</Parameter>
+        <Parameter name="RHS" type="float">2351</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="float">170</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="comment">Raise Claw</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnRight">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnRight">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Claw Down</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">-100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetMotorEncoder">
+    <Parameters>
+        <Parameter name="nMotorIndex" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getMotorEncoder(leftMotor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;=</Parameter>
+        <Parameter name="RHS" type="float">2351</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="float">170</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="end"/>
+
+<RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+</RobotConfiguration>
+
+<CSource>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+
+task main()
+{
+	// Obstacle Orchard Challenge 2016.03.26 Brian
+	// Using Clawbot IQ : Obstacle Det.
+	//// Go ahead
+	repeatUntil (getMotorEncoder(leftMotor) &gt;= 2351) {
+		if (getDistanceValue(distanceMM) &lt;= 170) {
+			stopAllMotors();
+		} else {
+			setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		}
+	}
+	// Turn
+	turnLeft(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnLeft(250, degrees, 100);
+	stopAllMotors();
+	// Go ahead
+	resetMotorEncoder(leftMotor);
+	repeatUntil (getMotorEncoder(leftMotor) &gt;= 1400) {
+		if (getDistanceValue(distanceMM) &lt;= 170) {
+			stopAllMotors();
+		} else {
+			setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		}
+	}
+	stopAllMotors();
+	// Raise Claw
+	moveMotor(motor10, 2, seconds, 100);
+	// Turn
+	turnLeft(650, degrees, 100);
+	stopAllMotors();
+	// Claw Down
+	moveMotor(motor10, 2, seconds, -100);
+	// Go ahead
+	resetMotorEncoder(leftMotor);
+	repeatUntil (getMotorEncoder(leftMotor) &gt;= +1815) {
+		if (getDistanceValue(distanceMM) &lt;= 170) {
+			stopAllMotors();
+		} else {
+			setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		}
+	}
+	// Raise Claw
+	moveMotor(motor10, 2, seconds, 100);
+	// Turn
+	turnLeft(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnLeft(250, degrees, 100);
+	stopAllMotors();
+	// Claw Down
+	moveMotor(motor10, 2, seconds, -100);
+	// Go ahead
+	resetMotorEncoder(leftMotor);
+	repeatUntil (getMotorEncoder(leftMotor) &gt;= 2351) {
+		if (getDistanceValue(distanceMM) &lt;= 170) {
+			stopAllMotors();
+		} else {
+			setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		}
+	}
+	// Raise Claw
+	moveMotor(motor10, 2, seconds, 100);
+	// Turn
+	turnRight(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnRight(250, degrees, 100);
+	// Claw Down
+	moveMotor(motor10, 2, seconds, -100);
+	// Go ahead
+	resetMotorEncoder(leftMotor);
+	repeatUntil (getMotorEncoder(leftMotor) &gt;= 2351) {
+		if (getDistanceValue(distanceMM) &lt;= 170) {
+			stopAllMotors();
+		} else {
+			setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		}
+	}
+}
+</CSource>

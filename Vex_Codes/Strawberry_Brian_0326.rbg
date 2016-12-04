@@ -1,0 +1,373 @@
+<Version>1.0.1</Version>
+
+<ProgrammingBlock type="comment">Strawberry Challenge 2016.03.26 Brian</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="RepeatForever"/>
+
+<ProgrammingBlock type="comment">Detect Strawberry</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">50</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;=</Parameter>
+        <Parameter name="RHS" type="short" typeDef="bool">80</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
+    <Parameters>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="loop" loopType="IfThen">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getColorName(colorDetector)</Parameter>
+        <Parameter name="operator" type="typedef">==</Parameter>
+        <Parameter name="RHS" type="typedef" typeDef="TSimpleColors">colorGreen</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Claw Control : Grab</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor11</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Right Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="wait">
+    <Parameters>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getGyroDegrees(gyroSensor)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="long">-87</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Claw Control: Release</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor11</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Left Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="wait">
+    <Parameters>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getGyroDegrees(gyroSensor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;</Parameter>
+        <Parameter name="RHS" type="long">93</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="else"/>
+
+<ProgrammingBlock type="comment">Claw Control : Grab</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor11</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Left Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="wait">
+    <Parameters>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getGyroDegrees(gyroSensor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;</Parameter>
+        <Parameter name="RHS" type="long">87</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="comment">Claw Control: Release</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor11</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Right Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="wait">
+    <Parameters>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getGyroDegrees(gyroSensor)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="long">-93</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="end"/>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="wait">
+    <Parameters>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="speed" type="short">-50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="resetGyro">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">gyroSensor</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getGyroDegrees(gyroSensor)</Parameter>
+        <Parameter name="operator" type="typedef">&gt;</Parameter>
+        <Parameter name="RHS" type="long">3</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopAllMotors"/>
+
+<ProgrammingBlock type="end"/>
+
+<RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+</RobotConfiguration>
+
+<CSource>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+
+task main()
+{
+	// Strawberry Challenge 2016.03.26 Brian
+	repeat (forever) {
+		// Detect Strawberry
+		setMultipleMotors(50, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		waitUntil (getDistanceValue(distanceMM) &lt;= 80);
+		stopMultipleMotors(rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+		if (getColorName(colorDetector) == colorGreen) {
+			// Claw Control : Grab
+			moveMotor(motor11, 2, seconds, 50);
+			// Right Turn
+			resetGyro(gyroSensor);
+			wait(1, seconds);
+			setMotor(leftMotor, 50);
+			setMotor(rightMotor, -50);
+			waitUntil (getGyroDegrees(gyroSensor) &lt; -87);
+			stopAllMotors();
+			// Claw Control: Release
+			moveMotor(motor11, 2, seconds, -50);
+			// Left Turn
+			resetGyro(gyroSensor);
+			wait(1, seconds);
+			setMotor(leftMotor, -50);
+			setMotor(rightMotor, 50);
+			waitUntil (getGyroDegrees(gyroSensor) &gt; 93);
+			stopAllMotors();
+		} else {
+			// Claw Control : Grab
+			moveMotor(motor11, 2, seconds, 50);
+			// Left Turn
+			resetGyro(gyroSensor);
+			wait(1, seconds);
+			setMotor(leftMotor, -50);
+			setMotor(rightMotor, 50);
+			waitUntil (getGyroDegrees(gyroSensor) &gt; 87);
+			stopAllMotors();
+			// Claw Control: Release
+			moveMotor(motor11, 2, seconds, -50);
+			// Right Turn
+			resetGyro(gyroSensor);
+			wait(1, seconds);
+			setMotor(leftMotor, 50);
+			setMotor(rightMotor, -50);
+			waitUntil (getGyroDegrees(gyroSensor) &lt; -93);
+			stopAllMotors();
+		}
+		resetGyro(gyroSensor);
+		wait(1, seconds);
+		setMotor(leftMotor, -50);
+		setMotor(rightMotor, 50);
+		resetGyro(gyroSensor);
+		waitUntil (getGyroDegrees(gyroSensor) &gt; 3);
+		stopAllMotors();
+	}
+}
+</CSource>

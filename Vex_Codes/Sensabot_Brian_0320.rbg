@@ -1,0 +1,141 @@
+<Version>1.0.1</Version>
+
+<ProgrammingBlock type="comment" commented="1">Sensabot Challenge 2016.03.20 Brian</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">1 STEP : go ahead and raise hand and down</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">2.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">-1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">2 STEP </ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">2.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">-1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">3 STEP</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">2.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">-1</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">4 STEP : Return to start point</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="backward">
+    <Parameters>
+        <Parameter name="quantity" type="float">7.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">rotations</Parameter>
+        <Parameter name="speed" type="short">50</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+</RobotConfiguration>
+
+<CSource>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+
+task main()
+{
+	//// Sensabot Challenge 2016.03.20 Brian
+	// 1 STEP : go ahead and raise hand and down
+	forward(2.5, rotations, 50);
+	moveMotor(motor10, 1, rotations, 50);
+	moveMotor(motor10, -1, rotations, 50);
+	// 2 STEP 
+	forward(2.5, rotations, 50);
+	moveMotor(motor10, 1, rotations, 50);
+	moveMotor(motor10, -1, rotations, 50);
+	// 3 STEP
+	forward(2.5, rotations, 50);
+	moveMotor(motor10, 1, rotations, 50);
+	moveMotor(motor10, -1, rotations, 50);
+	// 4 STEP : Return to start point
+	backward(7.5, rotations, 50);
+}
+</CSource>

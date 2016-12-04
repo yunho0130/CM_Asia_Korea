@@ -1,0 +1,208 @@
+<Version>1.0.1</Version>
+
+<ProgrammingBlock type="comment">Orchard Challenge 2016.03.20 Brian</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Raise Claw</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="moveMotor">
+    <Parameters>
+        <Parameter name="motorPort" type="base typedef" typeDef="tMotor">motor10</Parameter>
+        <Parameter name="quantity" type="float">2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">4.2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">2.7</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">650</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">3.2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnLeft">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">4.2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Turn</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnRight">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">1.5</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="turnRight">
+    <Parameters>
+        <Parameter name="quantity" type="float">250</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">degrees</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Go ahead</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="forward">
+    <Parameters>
+        <Parameter name="quantity" type="float">4.2</Parameter>
+        <Parameter name="unitType" type="base typedef" typeDef="tMovementUnits">seconds</Parameter>
+        <Parameter name="speed" type="short">100</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+</RobotConfiguration>
+
+<CSource>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+
+task main()
+{
+	// Orchard Challenge 2016.03.20 Brian
+	// Raise Claw
+	moveMotor(motor10, 2, seconds, 100);
+	// Go ahead
+	forward(4.2, seconds, 100);
+	// Turn
+	turnLeft(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnLeft(250, degrees, 100);
+	// Go ahead
+	forward(2.7, seconds, 100);
+	// Turn
+	turnLeft(650, degrees, 100);
+	// Go ahead
+	forward(3.2, seconds, 100);
+	// Turn
+	turnLeft(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnLeft(250, degrees, 100);
+	// Go ahead
+	forward(4.2, seconds, 100);
+	// Turn
+	turnRight(250, degrees, 100);
+	forward(1.5, seconds, 100);
+	turnRight(250, degrees, 100);
+	// Go ahead
+	forward(4.2, seconds, 100);
+}
+</CSource>

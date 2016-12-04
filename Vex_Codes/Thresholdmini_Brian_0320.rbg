@@ -1,0 +1,189 @@
+<Version>1.0.1</Version>
+
+<ProgrammingBlock type="comment">Threshold Challenge 2016.03.20 Brian</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Set LED color Yellow</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setTouchLEDColor">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">touchLED</Parameter>
+        <Parameter name="nColor" type="base typedef" typeDef="TSimpleColors">colorYellow</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">-100</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="short">750</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
+    <Parameters>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Set LED color Orange</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setTouchLEDColor">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">touchLED</Parameter>
+        <Parameter name="nColor" type="base typedef" typeDef="TSimpleColors">colorOrange</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">-100</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="short">500</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
+    <Parameters>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Set LED color Red</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setTouchLEDColor">
+    <Parameters>
+        <Parameter name="nDeviceIndex" type="base typedef" typeDef="tSensors">touchLED</Parameter>
+        <Parameter name="nColor" type="base typedef" typeDef="TSimpleColors">colorRed</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">-100</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="short">250</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
+    <Parameters>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="comment">Avoid obstacle</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="setMultipleMotors">
+    <Parameters>
+        <Parameter name="speed" type="short">-100</Parameter>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="OneLineLoop" loopType="WaitUntil">
+    <Parameters>
+        <Parameter name="LHS" type="typedef">getDistanceValue(distanceMM)</Parameter>
+        <Parameter name="operator" type="typedef">&lt;</Parameter>
+        <Parameter name="RHS" type="short">150</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
+    <Parameters>
+        <Parameter name="firstMotor" type="base typedef" typeDef="tMotor">rightMotor</Parameter>
+        <Parameter name="secondMotor" type="base typedef" typeDef="tMotor">leftMotor</Parameter>
+        <Parameter name="thirdMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+        <Parameter name="fourthMotor" type="base typedef" typeDef="tMotor">noMotorOnPort</Parameter>
+    </Parameters>
+</ProgrammingBlock>
+
+<RobotConfiguration>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+</RobotConfiguration>
+
+<CSource>#pragma config(Sensor, port2,  touchLED,       sensorVexIQ_LED)
+#pragma config(Sensor, port3,  colorDetector,  sensorVexIQ_ColorHue)
+#pragma config(Sensor, port4,  gyroSensor,     sensorVexIQ_Gyro)
+#pragma config(Sensor, port7,  distanceMM,     sensorVexIQ_Distance)
+#pragma config(Sensor, port8,  bumpSwitch,     sensorVexIQ_Touch)
+#pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
+#pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
+#pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
+#pragma config(Motor,  motor11,         clawMotor,     tmotorVexIQ, openLoop, encoder)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+
+task main()
+{
+	// Threshold Challenge 2016.03.20 Brian
+	// Set LED color Yellow
+	setTouchLEDColor(touchLED, colorYellow);
+	setMultipleMotors(-100, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	waitUntil (getDistanceValue(distanceMM) &lt; 750);
+	stopMultipleMotors(rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	// Set LED color Orange
+	setTouchLEDColor(touchLED, colorOrange);
+	setMultipleMotors(-100, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	waitUntil (getDistanceValue(distanceMM) &lt; 500);
+	stopMultipleMotors(rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	// Set LED color Red
+	setTouchLEDColor(touchLED, colorRed);
+	setMultipleMotors(-100, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	waitUntil (getDistanceValue(distanceMM) &lt; 250);
+	stopMultipleMotors(rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	// Avoid obstacle
+	setMultipleMotors(-100, rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+	waitUntil (getDistanceValue(distanceMM) &lt; 150);
+	stopMultipleMotors(rightMotor, leftMotor, noMotorOnPort, noMotorOnPort);
+}
+</CSource>
