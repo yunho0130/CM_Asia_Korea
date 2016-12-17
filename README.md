@@ -4,7 +4,7 @@ Carnegie Mellon STEM Program korea
 * Pycharm Edu 다운로드  
 <https://www.jetbrains.com/pycharm-edu/download/#section=windows-version>
 
-* Python 수업에 사용된 코드 (중등) 
+* Python 수업에 사용된 코드 (중등)  
 <https://gist.github.com/yunho0130>
 
 * Python 수업 교재 (중등)  
